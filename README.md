@@ -16,10 +16,14 @@ Once the 5 puzzles are solved, the box unlocks automatically at the same time as
 
 1. Insert the key in the lock and turn it
 2. Use a source of light through the little hole
-3. Use a valid RFID card/keychain on the centre of the box's backside
-4. Use the correct combination of colours by pushing the buttons below the big RGB LED
+3. Use a valid RFID card/keychain on the centre of the box's backside. The list of valid RFID tags is set in the code.
+4. Use the correct combination of colours by pushing the buttons below the big RGB LED. The combination is set in the code and currently is: Purple, Blue, Red, Green and Cyan.
 5. Use a mobile/computer to scan for WIFI networks. Upon switch-on, the box automatically creates a WIFI access point and its name contains a sequence of numbers (randomly generated every time we switch on the box) that we then need to input by using the box's keypad
+
+## Arduino board
+
+The code compatible with the Arduino Nano board.
 
 ## Development
 
-It's been developed using the official Arduino IDE and is compatible with the Arduino Nano board.
+It's been developed using the official Arduino IDE
