@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This is the source code and schematics for a custom puzzle box that I built.
+This is the source code and schematics for a custom puzzle box that I designed and built.
 
 The box is locked from the inside (using a servomotor) and to be opened, one needs to solve the 5 puzzles built-in.
 
@@ -10,7 +10,7 @@ The box is locked from the inside (using a servomotor) and to be opened, one nee
 
 Every time we solve one of the puzzles, we can hear a beep and one of the red LEDs is automatically switched off.
 
-Once the 5 puzzles are solved, the box unlocks automatically at the same time as the opening theme of the game "The Secret of Monkey Island" is played.
+Once the 5 puzzles are solved, the box unlocks automatically at the same time as the opening theme of the game "The Secret of Monkey Island" is played through a passive buzzer.
 
 ## Solution to the 5 puzzles
 
