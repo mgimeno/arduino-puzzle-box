@@ -22,8 +22,8 @@ Once the 5 puzzles are solved, the box unlocks automatically at the same time as
 
 ## Arduino board
 
-The code compatible with the Arduino Nano board.
+This code is compatible with the Arduino Nano board.
 
 ## Development
 
-It's been developed using the official Arduino IDE
+It's been developed using the official Arduino IDE.
