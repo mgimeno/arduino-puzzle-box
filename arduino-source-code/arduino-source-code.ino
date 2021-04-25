@@ -19,6 +19,9 @@ const int rgbLedGreenPin = 10; // PWM
 const int rgbLedBluePin = 11; // PWM
 const int keySwitchPin = 12; //DIGITAL INPUT_PULL
 
+const int nonExistantPinForRfidWrite = 15; //RFID Write pin
+const int nonExistantPinForWifiRead = 16; //Wireless Read pin
+
 const int keypadPins[] = {A0, A1, A2, A3}; // DIGITAL INPUT_PULLUP
 //For reference:
 //First pin of the keypad -> pin A1
@@ -34,12 +37,11 @@ char rfidTag[13] = "123456789abc"; // Initial contents are just arbitrary. We ne
 int rfidIncomingByte;
 byte rfidByteIndex;
 char validRfidTag1[13] = "41003DF2D45A"; // First card (for Juan)
-char validRfidTag2[13] = "41003DE841D5"; // Second card (for Elena)
-char validRfidTag3[13] = "3D0021738DE2"; // Keychain (for me. Reference number: 0002192269)
-SoftwareSerial rfidDevice(rfidReadPin, 15);
+char validRfidTag2[13] = "3D0021738DE2"; // Keychain (for me. Reference number: 0002192269)
+SoftwareSerial rfidDevice(rfidReadPin, nonExistantPinForRfidWrite);
 
 int keypadPassword[] = { -1, -1, -1, -1, -1};
-SoftwareSerial wifiDevice(13, wifiWritePin);
+SoftwareSerial wifiDevice(nonExistantPinForWifiRead, wifiWritePin);
 
 Servo servo;
 int servoPosition = 0;
@@ -87,7 +89,7 @@ bool isClosingBox = false;
 
 unsigned long timeSinceSwitchedOn;
 
-const unsigned long msAfterBoxOpenAutomatically = 86400000; // 24 hours
+const unsigned long msAfterBoxOpenAutomatically = 7200000; // 2 hours
 
 bool isDebugEnabled = false;
 
@@ -333,7 +335,7 @@ void checkRFID() {
       displayTextOnSerial(("ID Tag: "));
       displayLineOnSerial(rfidTag);
 
-      if (strcmp(rfidTag, validRfidTag1) == 0 || strcmp(rfidTag, validRfidTag2) == 0 || strcmp(rfidTag, validRfidTag3) == 0) {
+      if (strcmp(rfidTag, validRfidTag1) == 0 || strcmp(rfidTag, validRfidTag2) == 0) {
         isRfidPuzzleSolved = true;
         puzzleSolved();
         displayLineOnSerial("RFID PUZZLE SOLVED");
